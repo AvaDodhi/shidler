@@ -10,7 +10,7 @@
 
 ---
 
-## Executive Summary (150 words max)
+## Executive Summary 
 
 Servco’s brand is a strategic asset that differentiates us in markets where products, pricing, and promotions can be quickly matched. Beyond logos and colors, brand is the cumulative impression created by what we say, how we show up, and how consistently we deliver—across advertising, social content, retail experiences, community initiatives, and executive communications. Consistency builds trust, reduces decision friction, and signals credibility to customers, employees, and partners. Because Servco operates across multiple business areas and represents multiple automotive brands while also maintaining a distinct corporate reputation, unified communication standards are essential. A standardized PowerPoint brand template is a high-impact enablement tool that improves speed, elevates quality, reduces rework, and ensures presentations consistently reflect Servco’s professionalism and values
 
