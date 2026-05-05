@@ -1,0 +1,301 @@
+{
+  "brand": {
+    "name": "SERVCO",
+    "theme_name": "SERVCO_CORP_PRES_WIDE",
+    "version": "1.0"
+  },
+
+  "canvas": {
+    "width_emu": 24387175,
+    "height_emu": 13716000,
+    "width_inches": 26.67,
+    "height_inches": 15.0,
+    "aspect_ratio": "16:9",
+    "orientation": "landscape"
+  },
+
+  "colors": {
+    "primary_navy": "#274291",
+    "primary_blue": "#3155A6",
+    "accent_light_blue": "#1C92D1",
+    "white": "#FFFFFF",
+    "black": "#000000",
+    "theme_dark1": "#000000",
+    "theme_light1": "#FFFFFF",
+    "theme_dark2": "#1F497D",
+    "theme_light2": "#EEECE1",
+    "theme_accent1": "#4F81BD",
+    "theme_accent2": "#C0504D",
+    "theme_accent3": "#9BBB59",
+    "theme_accent4": "#8064A2",
+    "theme_accent5": "#4BACC6",
+    "theme_accent6": "#F79646",
+    "hyperlink": "#0000FF",
+    "followed_hyperlink": "#800080",
+    "usage": {
+      "primary_navy": "Logo wordmark, slide number, title text, footer brand lockup background",
+      "primary_blue": "Diagonal accent line motif, decorative elements, footer left section",
+      "accent_light_blue": "Accent bars, decorative slash mark icon, wave illustration tones, body text accent",
+      "white": "Text on dark backgrounds, logo on dark slides, footer text",
+      "black": "Body text on light backgrounds"
+    }
+  },
+
+  "typography": {
+    "font_scheme_name": "Custom 3",
+    "heading_font": "Montserrat ExtraBold",
+    "body_font": "Montserrat Medium",
+    "fallback_font": "Arial",
+    "monospace_font": "Courier New",
+    "embedded_fonts": [
+      "Montserrat ExtraBold",
+      "Montserrat Medium",
+      "Montserrat Light"
+    ],
+    "sizes": {
+      "title_master": { "pt": 113, "emu": 1130000, "note": "Master default — very large" },
+      "slide_title": { "pt": 54, "emu": 540000 },
+      "section_header": { "pt": 40, "emu": 400000 },
+      "heading_large": { "pt": 36, "emu": 360000 },
+      "heading_medium": { "pt": 32, "emu": 320000 },
+      "heading_small": { "pt": 30, "emu": 300000 },
+      "body_large": { "pt": 28, "emu": 280000 },
+      "body_default": { "pt": 18, "emu": 180000 },
+      "caption_small": { "pt": 8, "emu": 80000 },
+      "slide_number": { "pt": 20, "emu": 200000 }
+    },
+    "body_text_hierarchy": {
+      "level1": { "size_pt": 82, "bullet": "•", "font": "Arial", "indent_emu": 879298 },
+      "level2": { "size_pt": 72, "bullet": "–", "font": "Arial", "indent_emu": 1905147 },
+      "level3": { "size_pt": 62, "bullet": "•", "font": "Arial", "indent_emu": 2930995 },
+      "level4": { "size_pt": 51, "bullet": "–", "font": "Arial", "indent_emu": 4103393 },
+      "level5": { "size_pt": 51, "bullet": "»", "font": "Arial", "indent_emu": 5275791 }
+    },
+    "spacing": {
+      "body_space_before_pct": 20,
+      "title_space_before_pct": 0,
+      "kern_pt": 12
+    }
+  },
+
+  "slide_layouts": {
+    "layout_count": 12,
+    "layouts": [
+      {
+        "id": "slideLayout1",
+        "name": "Vertical Title and Text",
+        "background": "light",
+        "colors_used": ["#1C92D1", "#3155A6"],
+        "font_sizes_pt": [40, 30]
+      },
+      {
+        "id": "slideLayout2",
+        "name": "1_Vertical Title and Text",
+        "background": "light",
+        "colors_used": ["#1C92D1", "#3155A6"],
+        "font_sizes_pt": [40, 32, 28]
+      },
+      {
+        "id": "slideLayout3",
+        "name": "3_Vertical Title and Text",
+        "background": "light",
+        "colors_used": [],
+        "font_sizes_pt": [32, 28]
+      },
+      {
+        "id": "slideLayout4",
+        "name": "2_Vertical Title and Text",
+        "background": "dark",
+        "colors_used": ["#FFFFFF"],
+        "font_sizes_pt": [40, 32, 28]
+      },
+      {
+        "id": "slideLayout5",
+        "name": "Basic Slide",
+        "background": "light",
+        "colors_used": ["#274291", "#3155A6", "#1C92D1", "#000000"],
+        "font_sizes_pt": [54, 36],
+        "notes": "Primary content slide — white bg, footer bar"
+      },
+      {
+        "id": "slideLayout6",
+        "name": "Photo and Bullets",
+        "background": "light",
+        "colors_used": ["#274291", "#3155A6", "#1C92D1", "#000000"],
+        "font_sizes_pt": [54, 36, 32, 30]
+      },
+      {
+        "id": "slideLayout7",
+        "name": "Photo & Text",
+        "background": "light",
+        "colors_used": ["#274291", "#3155A6", "#1C92D1", "#000000"],
+        "font_sizes_pt": [54, 36, 32, 30]
+      },
+      {
+        "id": "slideLayout8",
+        "name": "Paragraphy",
+        "background": "light",
+        "colors_used": ["#274291", "#3155A6", "#1C92D1", "#000000"],
+        "font_sizes_pt": [54, 36]
+      },
+      {
+        "id": "slideLayout9",
+        "name": "Blank Slide",
+        "background": "light",
+        "colors_used": [],
+        "font_sizes_pt": []
+      },
+      {
+        "id": "slideLayout10",
+        "name": "4_Custom Layout",
+        "background": "light",
+        "colors_used": ["#274291", "#000000"],
+        "font_sizes_pt": [54, 36, 28]
+      },
+      {
+        "id": "slideLayout11",
+        "name": "5_Custom Layout",
+        "background": "light",
+        "colors_used": ["#274291", "#1C92D1", "#000000"],
+        "font_sizes_pt": [54, 36, 18, 8]
+      },
+      {
+        "id": "slideLayout12",
+        "name": "7_Custom Layout",
+        "background": "dark",
+        "colors_used": ["#274291", "#FFFFFF"],
+        "font_sizes_pt": []
+      }
+    ]
+  },
+
+  "visual_motifs": {
+    "diagonal_line": {
+      "description": "Thin diagonal line running from upper-right to lower-center — a signature brand element across all slide types",
+      "color": "#3155A6",
+      "opacity_approx": 0.3,
+      "applies_to": "all slides"
+    },
+    "slash_accent_icon": {
+      "description": "A bold double-slash mark (//) in two-tone blue — sits at the intersection of the diagonal line, acts as a punctuation/brand mark",
+      "colors": ["#274291", "#1C92D1"],
+      "applies_to": "cover and section slides"
+    },
+    "wave_illustration": {
+      "description": "Organic flowing wave lines in the lower-right quadrant of cover/divider slides, rendered as a watermark-style graphic",
+      "color_light_version": "#C5DCF0",
+      "color_dark_version": "#3A6DB5",
+      "applies_to": "cover slides, section dividers"
+    },
+    "footer_bar": {
+      "description": "Two-part horizontal footer bar anchored at the bottom of content slides",
+      "left_section": {
+        "color": "#1C92D1",
+        "content": "Diagonal hatch/stripe pattern",
+        "width_ratio": "~75%"
+      },
+      "right_section": {
+        "color": "#274291",
+        "content": "SERVCO wordmark in white",
+        "width_ratio": "~25%"
+      },
+      "applies_to": "content slides (layouts 4, 5, 6)"
+    },
+    "horizontal_rule": {
+      "description": "Thin full-width horizontal rule separating the main content area from the footer zone on cover slides",
+      "color_light_version": "#1C92D1",
+      "color_dark_version": "#FFFFFF",
+      "weight": "thin"
+    },
+    "background_image": {
+      "source_file": "PP_WIDE_TEMP_BLUE_A.ai",
+      "description": "Full-bleed background SVG/vector applied via slide master — contains the diagonal line and wave motifs",
+      "offset_x_emu": 1587,
+      "offset_y_emu": 0
+    }
+  },
+
+  "slide_anatomy": {
+    "cover_slide": {
+      "background": "white",
+      "logo_position": "top-left",
+      "logo_color": "color (navy wordmark)",
+      "diagonal_line": true,
+      "slash_icon": true,
+      "wave_graphic": true,
+      "footer_bar": false,
+      "horizontal_rule": true
+    },
+    "cover_slide_dark": {
+      "background": "#274291",
+      "logo_position": "lower-left",
+      "logo_color": "white",
+      "diagonal_line": true,
+      "slash_icon": true,
+      "wave_graphic": true,
+      "footer_bar": false,
+      "horizontal_rule": true,
+      "bottom_band_color": "#1C92D1"
+    },
+    "content_slide": {
+      "background": "white",
+      "logo_position": "footer-right",
+      "logo_color": "white on navy",
+      "diagonal_line": false,
+      "slash_icon": false,
+      "wave_graphic": false,
+      "footer_bar": true,
+      "slide_number_position": "top-right",
+      "slide_number_color": "#274291"
+    }
+  },
+
+  "logo": {
+    "wordmark": "SERVCO",
+    "font": "Montserrat ExtraBold",
+    "color_on_light": "#274291",
+    "color_on_dark": "#FFFFFF",
+    "positions": {
+      "cover_top_left": { "x_approx": "5% from left", "y_approx": "12% from top" },
+      "cover_dark_lower_left": { "x_approx": "5% from left", "y_approx": "65% from top" },
+      "footer_lockup": { "x_approx": "right ~25% of slide", "y_approx": "bottom bar" }
+    }
+  },
+
+  "slide_number": {
+    "color": "#274291",
+    "size_pt": 20,
+    "position": "top-right",
+    "alignment": "right",
+    "offset_x_emu": 21862278,
+    "offset_y_emu": 619847
+  },
+
+  "governance_notes": {
+    "required_elements": [
+      "SERVCO wordmark must appear on every slide",
+      "Diagonal blue line motif is a core brand signature — do not remove",
+      "Wave illustration only on cover/section slides, not content slides",
+      "Footer bar (two-tone) required on all content/body slides",
+      "Slide numbers top-right in navy (#274291) on content slides"
+    ],
+    "color_rules": [
+      "Primary navy (#274291) is dominant — use for logo, headings, key UI elements",
+      "Light blue (#1C92D1) is the accent — use sparingly for highlights, bars, icons",
+      "Do not use accent colors (red, green, purple, orange) from the theme palette in brand presentations",
+      "White text only on navy or blue backgrounds"
+    ],
+    "typography_rules": [
+      "Montserrat ExtraBold for all headings and the wordmark",
+      "Montserrat Medium for body copy",
+      "Do not mix other fonts — Arial is bullet-point fallback only",
+      "Titles left-aligned on content slides; centered on cover slides"
+    ],
+    "do_not": [
+      "Do not add decorative elements that compete with the diagonal line motif",
+      "Do not use the accent colors (red, green, orange) in corporate presentations",
+      "Do not place the logo in the body content area",
+      "Do not use the wave graphic on content/data slides"
+    ]
+  }
+}
