@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SERVCO — Brand Parameters</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy:      #274291;
+      --blue:      #3155A6;
+      --light-blue:#1C92D1;
+      --white:     #FFFFFF;
+      --black:     #000000;
+      --bg:        #F4F6FA;
+      --surface:   #FFFFFF;
+      --border:    #DDE3EF;
+      --muted:     #8A97B8;
+      --text:      #1A2340;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    header {
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+      padding: 60px 64px 52px;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      top: -40px; right: -60px;
+      width: 2px; height: 200%;
+      background: rgba(255,255,255,0.15);
+      transform: rotate(-20deg);
+      transform-origin: top right;
+    }
+    header::after {
+      content: '//';
+      position: absolute;
+      right: 72px; top: 40px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 80px;
+      color: var(--light-blue);
+      opacity: 0.5;
+      letter-spacing: -6px;
+      line-height: 1;
+    }
+    .header-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--light-blue);
+      margin-bottom: 16px;
+    }
+    header h1 {
+      font-size: 52px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -1px;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 14px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.55);
+      letter-spacing: 0.5px;
+    }
+    .footer-bar-preview {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 6px;
+      display: flex;
+    }
+    .footer-bar-preview .fb-left  { flex: 3; background: var(--light-blue); }
+    .footer-bar-preview .fb-right { flex: 1; background: var(--blue); }
+
+    /* ── NAV TABS ── */
+    nav {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 0;
+      padding: 0 64px;
+      overflow-x: auto;
+    }
+    nav button {
+      background: none;
+      border: none;
+      border-bottom: 3px solid transparent;
+      padding: 18px 22px 15px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--muted);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: color .2s, border-color .2s;
+    }
+    nav button:hover { color: var(--navy); }
+    nav button.active { color: var(--navy); border-bottom-color: var(--light-blue); }
+
+    /* ── LAYOUT ── */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 48px 64px 80px;
+    }
+    .section { display: none; }
+    .section.active { display: block; }
+
+    /* ── SECTION HEADING ── */
+    .section-heading {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 36px;
+    }
+    .section-heading h2 {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -0.5px;
+    }
+    .section-heading .slash {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--light-blue);
+      letter-spacing: -2px;
+    }
+
+    /* ── CARDS ── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 28px 32px;
+      margin-bottom: 20px;
+    }
+    .card-title {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    /* ── COLORS ── */
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .color-swatch {
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .swatch-block {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'DM Mono', monospace;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+    .swatch-block.light-text { color: rgba(255,255,255,0.9); }
+    .swatch-block.dark-text  { color: rgba(0,0,0,0.45); border-bottom: 1px solid var(--border); }
+    .swatch-info {
+      padding: 10px 12px;
+      background: #fff;
+    }
+    .swatch-name {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+    .swatch-role {
+      font-size: 10px;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+    .color-grid-theme {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+      gap: 10px;
+    }
+    .theme-swatch {
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .theme-swatch .swatch-block { height: 48px; font-size: 11px; }
+    .theme-swatch .swatch-info { padding: 7px 9px; }
+    .theme-swatch .swatch-name { font-size: 10px; }
+
+    /* ── TYPOGRAPHY ── */
+    .font-demo {
+      padding: 28px 32px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-bottom: 14px;
+    }
+    .font-demo-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .font-display {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 42px;
+      color: var(--navy);
+      letter-spacing: -1px;
+      line-height: 1.1;
+    }
+    .font-body-display {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      font-size: 18px;
+      color: var(--text);
+      line-height: 1.6;
+      margin-top: 6px;
+    }
+    .size-table { width: 100%; border-collapse: collapse; }
+    .size-table th {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-align: left;
+      padding: 0 0 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .size-table td {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      vertical-align: middle;
+    }
+    .size-table tr:last-child td { border-bottom: none; }
+    .size-name { font-size: 13px; font-weight: 500; color: var(--text); }
+    .size-val  { font-family: 'DM Mono', monospace; font-size: 12px; color: var(--muted); }
+    .size-preview {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1;
+    }
+
+    /* ── BULLET HIERARCHY ── */
+    .bullet-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .bullet-row:last-child { border-bottom: none; }
+    .bullet-level {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--muted);
+      width: 50px;
+      flex-shrink: 0;
+    }
+    .bullet-char {
+      font-family: 'DM Mono', monospace;
+      font-size: 16px;
+      color: var(--navy);
+      width: 28px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .bullet-size {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      width: 50px;
+      flex-shrink: 0;
+    }
+    .bullet-preview {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    /* ── LAYOUTS ── */
+    .layout-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .layout-card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      background: var(--surface);
+    }
+    .layout-thumb {
+      height: 100px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .layout-thumb.light { background: #F8FAFD; border-bottom: 1px solid var(--border); }
+    .layout-thumb.dark  { background: var(--navy); }
+    .layout-thumb-label {
+      font-size: 11px;
+      font-weight: 500;
+      opacity: 0.5;
+    }
+    .layout-thumb.light .layout-thumb-label { color: var(--navy); }
+    .layout-thumb.dark  .layout-thumb-label { color: #fff; }
+    .layout-thumb-footer {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 10px;
+      display: flex;
+    }
+    .layout-thumb-footer .fb-l { flex: 3; background: var(--light-blue); opacity: 0.8; }
+    .layout-thumb-footer .fb-r { flex: 1; background: var(--navy); }
+    .layout-info { padding: 14px 16px; }
+    .layout-id   { font-family: 'DM Mono', monospace; font-size: 10px; color: var(--muted); margin-bottom: 4px; }
+    .layout-name { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 10px; }
+    .layout-chips { display: flex; flex-wrap: wrap; gap: 5px; }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 8px;
+      border-radius: 20px;
+      font-size: 10px;
+      font-weight: 500;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .chip-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .chip-size {
+      background: #EEF2FB;
+      border-color: #D5DDF5;
+      color: var(--navy);
+    }
+
+    /* ── MOTIFS ── */
+    .motif-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 700px) { .motif-grid { grid-template-columns: 1fr; } }
+    .motif-card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+      background: var(--surface);
+    }
+    .motif-preview {
+      height: 120px;
+      position: relative;
+      overflow: hidden;
+    }
+    .motif-info { padding: 16px 18px; }
+    .motif-name { font-size: 13px; font-weight: 500; color: var(--navy); margin-bottom: 6px; }
+    .motif-desc { font-size: 12px; color: var(--muted); line-height: 1.5; margin-bottom: 10px; }
+    .motif-applies {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--light-blue);
+    }
+
+    /* Motif previews */
+    .mp-diagonal {
+      background: #F0F4FA;
+    }
+    .mp-diagonal::before {
+      content: '';
+      position: absolute;
+      top: -20px; right: 30px;
+      width: 1px; height: 200%;
+      background: var(--blue);
+      opacity: 0.35;
+      transform: rotate(-20deg);
+    }
+    .mp-slash {
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .mp-slash span {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 64px;
+      letter-spacing: -6px;
+      line-height: 1;
+    }
+    .mp-slash .s1 { color: var(--light-blue); }
+    .mp-slash .s2 { color: #fff; }
+    .mp-wave {
+      background: var(--navy);
+      display: flex;
+      align-items: flex-end;
+    }
+    .mp-wave svg { width: 100%; height: 80px; }
+    .mp-footer {
+      background: #F8FAFD;
+      display: flex;
+      align-items: flex-end;
+    }
+    .mp-footer-bar {
+      width: 100%;
+      height: 32px;
+      display: flex;
+    }
+    .mp-footer-bar .fl {
+      flex: 3;
+      background: var(--light-blue);
+      display: flex;
+      align-items: center;
+      padding-left: 12px;
+      gap: 3px;
+    }
+    .mp-footer-bar .fl span {
+      display: inline-block;
+      width: 1px; height: 14px;
+      background: rgba(255,255,255,0.4);
+      transform: skewX(-20deg);
+    }
+    .mp-footer-bar .fr {
+      flex: 1;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .mp-footer-bar .fr span {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 9px;
+      color: #fff;
+      letter-spacing: 1px;
+    }
+    .mp-hline {
+      background: #F0F4FA;
+    }
+    .mp-hline::after {
+      content: '';
+      position: absolute;
+      bottom: 28px; left: 0; right: 0;
+      height: 1.5px;
+      background: var(--light-blue);
+      opacity: 0.6;
+    }
+
+    /* ── SLIDE ANATOMY ── */
+    .anatomy-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 750px) { .anatomy-grid { grid-template-columns: 1fr; } }
+    .anatomy-card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .anatomy-slide {
+      height: 130px;
+      position: relative;
+      overflow: hidden;
+    }
+    .anat-light { background: #fff; border-bottom: 1px solid var(--border); }
+    .anat-dark  { background: var(--navy); }
+    .anat-content { background: #fff; border-bottom: 1px solid var(--border); }
+
+    .anat-logo {
+      position: absolute;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 10px;
+      letter-spacing: 0.5px;
+    }
+    .anat-logo.navy  { color: var(--navy); top: 12px; left: 14px; }
+    .anat-logo.white { color: #fff; bottom: 34px; left: 14px; }
+    .anat-logo.footer-right {
+      color: #fff;
+      bottom: 4px; right: 0;
+      background: var(--navy);
+      padding: 4px 8px;
+      font-size: 8px;
+    }
+    .anat-diag {
+      position: absolute;
+      top: -10px; right: 20px;
+      width: 1px; height: 160%;
+      background: var(--blue);
+      opacity: 0.2;
+      transform: rotate(-20deg);
+    }
+    .anat-slash {
+      position: absolute;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 20px;
+      letter-spacing: -2px;
+      top: 20px; right: 24px;
+    }
+    .anat-slash.color { color: var(--light-blue); }
+    .anat-slash.white { color: #fff; opacity: 0.7; }
+    .anat-rule {
+      position: absolute;
+      bottom: 22px; left: 0; right: 0;
+      height: 1px;
+      background: var(--light-blue);
+      opacity: 0.5;
+    }
+    .anat-rule.white-rule { background: #fff; opacity: 0.4; }
+    .anat-footer-bar {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 14px;
+      display: flex;
+    }
+    .anat-footer-bar .fl { flex: 3; background: var(--light-blue); }
+    .anat-footer-bar .fr { flex: 1; background: var(--navy); }
+    .anat-slidenum {
+      position: absolute;
+      top: 8px; right: 10px;
+      font-family: 'DM Mono', monospace;
+      font-size: 8px;
+      color: var(--navy);
+    }
+    .anat-bottom-band {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 22px;
+      background: var(--light-blue);
+    }
+    .anatomy-info { padding: 14px 16px; }
+    .anatomy-name { font-size: 13px; font-weight: 500; color: var(--navy); margin-bottom: 10px; }
+    .anatomy-props { display: flex; flex-direction: column; gap: 5px; }
+    .anatomy-prop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+    }
+    .anatomy-prop-key { color: var(--muted); }
+    .anatomy-prop-val { font-weight: 500; color: var(--text); }
+    .badge {
+      display: inline-block;
+      padding: 2px 7px;
+      border-radius: 10px;
+      font-size: 10px;
+      font-weight: 500;
+    }
+    .badge-yes  { background: #E6F4EA; color: #2D7A45; }
+    .badge-no   { background: #F3F4F6; color: var(--muted); }
+
+    /* ── GOVERNANCE ── */
+    .gov-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 700px) { .gov-grid { grid-template-columns: 1fr; } }
+    .gov-card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 22px 24px;
+      background: var(--surface);
+    }
+    .gov-card.required { border-top: 3px solid var(--navy); }
+    .gov-card.color    { border-top: 3px solid var(--light-blue); }
+    .gov-card.typo     { border-top: 3px solid var(--blue); }
+    .gov-card.donot    { border-top: 3px solid #C0504D; }
+    .gov-title { font-size: 11px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+    .gov-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .gov-list li {
+      font-size: 12px;
+      color: var(--text);
+      line-height: 1.5;
+      padding-left: 16px;
+      position: relative;
+    }
+    .gov-list li::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 7px;
+      width: 5px; height: 5px;
+      border-radius: 50%;
+    }
+    .gov-card.required li::before { background: var(--navy); }
+    .gov-card.color    li::before { background: var(--light-blue); }
+    .gov-card.typo     li::before { background: var(--blue); }
+    .gov-card.donot    li::before { background: #C0504D; }
+
+    /* ── CANVAS ── */
+    .kv-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 14px;
+    }
+    .kv-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 18px;
+    }
+    .kv-label { font-size: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+    .kv-value { font-family: 'DM Mono', monospace; font-size: 14px; color: var(--navy); font-weight: 500; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-label">Brand Parameters · v1.0</div>
+  <h1>SERVCO</h1>
+  <p>SERVCO_CORP_PRES_WIDE — Extracted from Servco_Theme.pptx</p>
+  <div class="footer-bar-preview">
+    <div class="fb-left"></div>
+    <div class="fb-right"></div>
+  </div>
+</header>
+
+<nav>
+  <button class="active" onclick="show('colors', this)">Colors</button>
+  <button onclick="show('typography', this)">Typography</button>
+  <button onclick="show('layouts', this)">Layouts</button>
+  <button onclick="show('motifs', this)">Visual Motifs</button>
+  <button onclick="show('anatomy', this)">Slide Anatomy</button>
+  <button onclick="show('canvas', this)">Canvas</button>
+  <button onclick="show('governance', this)">Governance</button>
+</nav>
+
+<main>
+
+  <!-- COLORS -->
+  <section id="colors" class="section active">
+    <div class="section-heading">
+      <div class="slash">//</div>
+      <h2>Color System</h2>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Core Brand Colors</div>
+      <div class="color-grid">
+        <div class="color-swatch">
+          <div class="swatch-block light-text" style="background:#274291">#274291</div>
+          <div class="swatch-info">
+            <div class="swatch-name">Primary Navy</div>
+            <div class="swatch-role">Logo, headings, footer lockup, slide number</div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch-block light-text" style="background:#3155A6">#3155A6</div>
+          <div class="swatch-info">
+            <div class="swatch-name">Primary Blue</div>
+            <div class="swatch-role">Diagonal line motif, decorative elements, footer left</div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch-block light-text" style="background:#1C92D1">#1C92D1</div>
+          <div class="swatch-info">
+            <div class="swatch-name">Accent Light Blue</div>
+            <div class="swatch-role">Accent bars, slash icon, wave tones, body accent</div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch-block dark-text" style="background:#FFFFFF">#FFFFFF</div>
+          <div class="swatch-info">
+            <div class="swatch-name">White</div>
+            <div class="swatch-role">Text on dark backgrounds, logo on dark slides</div>
+          </div>
+        </div>
+        <div class="color-swatch">
+          <div class="swatch-block light-text" style="background:#000000">#000000</div>
+          <div class="swatch-info">
+            <div class="swatch-name">Black</div>
+            <div class="swatch-role">Body text on light backgrounds</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Office Theme Palette (reference only — not for use in brand decks)</div>
+      <div class="color-grid-theme">
+        <div class="theme-swatch">
+          <div class="swatch-block light-text" style="background:#000000">#000000</div>
+          <div class="swatch-info"><div class="swatch-name">Dark 1</div></div>
+        </div>
+        <div class="theme-swatch">
+          <div class="swatch-block dark-text" style="background:#FFFFFF">#FFFFFF</div>
+          <div class="swatch-info"><div class="swatch-name">Light 1</div></div>
+        </div>
+        <div class="theme-swatch">
+          <div class="swatch-block light-text" style="background:#1F497D">#1F497D</div>
+          <div class="swatch-info"><div class="swatch-name">Dark 2</div></div>
+        </div>
+        <div class="theme-swatch">
+          <div class="swatch-block dark-text" style="background:#EEECE1">#EEECE1</div>
+          <div class="swatch-info"><div class="swatch-name">Light 2</div></div>
+        </div>
+        <div class="theme-swatch">
+          <div class="swatch-block light-text" style="background:#4F81BD">#4F81BD</div>
+          <div class="swatch-info"><div class="swatch-name">Accent 1</div></div>
+        </div>
+        <div class="theme-swatch">
+          <div class="swatch-block light-text" style="background:#C0504D">#C0504D</div>
+          <div class="swatch-info"><div class="swatch-name">Accent 2</div></div>
+        </div>
+        <div class="theme-swatch">
+          <div class="swatch-block dark-text" style="background:#9BBB59">#9BBB59</div>
+          <div class="swatch-info"><div class="swatch-name">Accent 3</div></div>
+        </div>
+        <div class="theme-swatch">
+          <div class="swatch-block light-text" style="background:#8064A2">#8064A2</div>
+          <div class="swatch-info"><div class="swatch-name">Accent 4</div></div>
+        </div>
+        <div class="theme-swatch">
+          <div class="swatch-block light-text" style="background:#4BACC6">#4BACC6</div>
+          <div class="swatch-info"><div class="swatch-name">Accent 5</div></div>
+        </div>
+        <div class="theme-swatch">
+          <div class="swatch-block dark-text" style="background:#F79646">#F79646</div>
+          <div class="swatch-info"><div class="swatch-name">Accent 6</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TYPOGRAPHY -->
+  <section id="typography" class="section">
+    <div class="section-heading">
+      <div class="slash">//</div>
+      <h2>Typography</h2>
+    </div>
+
+    <div class="font-demo">
+      <div class="font-demo-label">Heading Font — Montserrat ExtraBold</div>
+      <div class="font-display">SERVCO Brand Identity</div>
+    </div>
+    <div class="font-demo">
+      <div class="font-demo-label">Body Font — Montserrat Medium</div>
+      <div class="font-body-display">Consistent communication standards ensure every presentation reflects Servco's professionalism and values across all audiences and business lines.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Type Scale</div>
+      <table class="size-table">
+        <thead>
+          <tr>
+            <th>Role</th>
+            <th>pt</th>
+            <th>EMU</th>
+            <th>Preview</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="size-name">Slide Title</span></td>
+            <td><span class="size-val">54pt</span></td>
+            <td><span class="size-val">540,000</span></td>
+            <td><span class="size-preview" style="font-size:32px">Title</span></td>
+          </tr>
+          <tr>
+            <td><span class="size-name">Section Header</span></td>
+            <td><span class="size-val">40pt</span></td>
+            <td><span class="size-val">400,000</span></td>
+            <td><span class="size-preview" style="font-size:24px">Section</span></td>
+          </tr>
+          <tr>
+            <td><span class="size-name">Heading Large</span></td>
+            <td><span class="size-val">36pt</span></td>
+            <td><span class="size-val">360,000</span></td>
+            <td><span class="size-preview" style="font-size:20px">Heading</span></td>
+          </tr>
+          <tr>
+            <td><span class="size-name">Heading Medium</span></td>
+            <td><span class="size-val">32pt</span></td>
+            <td><span class="size-val">320,000</span></td>
+            <td><span class="size-preview" style="font-size:18px">Heading</span></td>
+          </tr>
+          <tr>
+            <td><span class="size-name">Heading Small</span></td>
+            <td><span class="size-val">30pt</span></td>
+            <td><span class="size-val">300,000</span></td>
+            <td><span class="size-preview" style="font-size:16px">Heading</span></td>
+          </tr>
+          <tr>
+            <td><span class="size-name">Body Large</span></td>
+            <td><span class="size-val">28pt</span></td>
+            <td><span class="size-val">280,000</span></td>
+            <td><span class="size-preview" style="font-size:15px">Body text</span></td>
+          </tr>
+          <tr>
+            <td><span class="size-name">Body Default</span></td>
+            <td><span class="size-val">18pt</span></td>
+            <td><span class="size-val">180,000</span></td>
+            <td><span class="size-preview" style="font-size:12px">Body text</span></td>
+          </tr>
+          <tr>
+            <td><span class="size-name">Slide Number</span></td>
+            <td><span class="size-val">20pt</span></td>
+            <td><span class="size-val">200,000</span></td>
+            <td><span class="size-preview" style="font-size:11px">01</span></td>
+          </tr>
+          <tr>
+            <td><span class="size-name">Caption Small</span></td>
+            <td><span class="size-val">8pt</span></td>
+            <td><span class="size-val">80,000</span></td>
+            <td><span class="size-preview" style="font-size:8px">Caption</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Bullet Text Hierarchy</div>
+      <div class="bullet-row">
+        <span class="bullet-level">L1</span>
+        <span class="bullet-char">•</span>
+        <span class="bullet-size">82pt EMU</span>
+        <span class="bullet-preview" style="font-size:15px">First level bullet point text</span>
+      </div>
+      <div class="bullet-row">
+        <span class="bullet-level">L2</span>
+        <span class="bullet-char">–</span>
+        <span class="bullet-size">72pt EMU</span>
+        <span class="bullet-preview" style="font-size:13px; margin-left:16px">Second level sub-item</span>
+      </div>
+      <div class="bullet-row">
+        <span class="bullet-level">L3</span>
+        <span class="bullet-char">•</span>
+        <span class="bullet-size">62pt EMU</span>
+        <span class="bullet-preview" style="font-size:12px; margin-left:32px">Third level detail point</span>
+      </div>
+      <div class="bullet-row">
+        <span class="bullet-level">L4</span>
+        <span class="bullet-char">–</span>
+        <span class="bullet-size">51pt EMU</span>
+        <span class="bullet-preview" style="font-size:11px; margin-left:48px">Fourth level sub-detail</span>
+      </div>
+      <div class="bullet-row">
+        <span class="bullet-level">L5</span>
+        <span class="bullet-char">»</span>
+        <span class="bullet-size">51pt EMU</span>
+        <span class="bullet-preview" style="font-size:11px; margin-left:64px">Fifth level fine detail</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- LAYOUTS -->
+  <section id="layouts" class="section">
+    <div class="section-heading">
+      <div class="slash">//</div>
+      <h2>Slide Layouts <span style="font-size:16px;color:var(--muted);font-weight:400">(12 total)</span></h2>
+    </div>
+    <div class="layout-grid">
+
+      <div class="layout-card">
+        <div class="layout-thumb light"></div>
+        <div class="layout-info">
+          <div class="layout-id">slideLayout1</div>
+          <div class="layout-name">Vertical Title and Text</div>
+          <div class="layout-chips">
+            <span class="chip"><span class="chip-dot" style="background:#1C92D1"></span>#1C92D1</span>
+            <span class="chip"><span class="chip-dot" style="background:#3155A6"></span>#3155A6</span>
+            <span class="chip chip-size">40pt</span>
+            <span class="chip chip-size">30pt</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="layout-card">
+        <div class="layout-thumb light"></div>
+        <div class="layout-info">
+          <div class="layout-id">slideLayout2</div>
+          <div class="layout-name">1_Vertical Title and Text</div>
+          <div class="layout-chips">
+            <span class="chip"><span class="chip-dot" style="background:#1C92D1"></span>#1C92D1</span>
+            <span class="chip"><span class="chip-dot" style="background:#3155A6"></span>#3155A6</span>
+            <span class="chip chip-size">40pt</span><span class="chip chip-size">32pt</span><span class="chip chip-size">28pt</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="layout-card">
+        <div class="layout-thumb light"></div>
+        <div class="layout-info">
+          <div class="layout-id">slideLayout3</div>
+          <div class="layout-name">3_Vertical Title and Text</div>
+          <div class="layout-chips">
+            <span class="chip chip-size">32pt</span><span class="chip chip-size">28pt</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="layout-card">
+        <div class="layout-thumb dark"></div>
+        <div class="layout-info">
+          <div class="layout-id">slideLayout4</div>
+          <div class="layout-name">2_Vertical Title and Text</div>
+          <div class="layout-chips">
+            <span class="chip"><span class="chip-dot" style="background:#FFFFFF;border:1px solid #ccc"></span>#FFFFFF</span>
+            <span class="chip chip-size">40pt</span><span class="chip chip-size">32pt</span><span class="chip chip-size">28pt</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="layout-card">
+        <div class="layout-thumb light" style="position:relative">
+          <div class="layout-thumb-footer"><div class="fb-l"></div><div class="fb-r"></div></div>
+        </div>
+        <div class="layout-info">
+          <div class="layout-id">slideLayout5</div>
+          <div class="layout-name">Basic Slide ★ Primary content</div>
+          <div class="layout-chips">
+            <span class="chip"><span class="chip-dot" style="background:#274291"></span>#274291</span>
+            <span class="chip"><span class="chip-dot" style="background:#1C92D1"></span>#1C92D1</span>
+            <span class="chip chip-size">54pt</span><span class="chip chip-size">36pt</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="layout-card">
+        <div class="layout-thumb light" style="position:relative">
+          <div class="layout-thumb-footer"><div class="fb-l"></div><div class="fb-r"></div></div>
+        </div>
+        <div class="layout-info">
+          <div class="layout-id">slideLayout6</div>
+          <div class="layout-name">Photo and Bullets</div>
+          <div class="layout-chips">
+            <span class="chip"><span class="chip-dot" style="background:#274291"></span>#274291</span>
+            <span class="chip chip-size">54pt</span><span class="chip chip-size">36pt</span><span class="chip chip-size">32pt</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="layout-card">
+        <div class="layout-thumb light" style="position:relative">
+          <div class="layout-thumb-footer"><div class="fb-l"></div><div class="fb-r"></div></div>
+        </div>
+        <div class="layout-info">
+          <div class="layout-id">slideLayout7</div>
+          <div class="layout-name">Photo &amp; Text</div>
+          <div class="layout-chips">
+            <span class="chip"><span class="chip-dot" style="background:#274291"></span>#274291</span>
+            <span class="chip chip-size">54pt</span><span class="chip chip-size">36pt</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="layout-card">
+        <div class="layout-thumb light" style="position:relative">
+          <div class="layout-thumb-footer"><div class="fb-l"></div><div class="fb-r"></div></div>
+        </div>
+        <div class="layout-info">
+          <div class="layout-id">slideLayout8</div>
+          <div class="layout-name">Paragraphy</div>
+          <div class="layout-chips">
+            <span class="chip"><span class="chip-dot" style="background:#274291"></span>#274291</span>
+            <span class="chip chip-size">54pt</span><span class="chip chip-size">36pt</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="layout-card">
+        <div class="layout-thumb light"><span class="layout-thumb-label">Blank</span></div>
+        <div class="layout-info">
+          <div class="layout-id">slideLayout9</div>
+          <div class="layout-name">Blank Slide</div>
+          <div class="layout-chips"><span class="chip" style="color:var(--muted)">No colors specified</span></div>
+        </div>
+      </div>
+
+      <div class="layout-card">
+        <div class="layout-thumb light" style="position:relative">
+          <div class="layout-thumb-footer"><div class="fb-l"></div><div class="fb-r"></div></div>
+        </div>
+        <div class="layout-info">
+          <div class="layout-id">slideLayout10</div>
+          <div class="layout-name">4_Custom Layout</div>
+          <div class="layout-chips">
+            <span class="chip"><span class="chip-dot" style="background:#274291"></span>#274291</span>
+            <span class="chip chip-size">54pt</span><span class="chip chip-size">36pt</span><span class="chip chip-size">28pt</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="layout-card">
+        <div class="layout-thumb light" style="position:relative">
+          <div class="layout-thumb-footer"><div class="fb-l"></div><div class="fb-r"></div></div>
+        </div>
+        <div class="layout-info">
+          <div class="layout-id">slideLayout11</div>
+          <div class="layout-name">5_Custom Layout</div>
+          <div class="layout-chips">
+            <span class="chip"><span class="chip-dot" style="background:#274291"></span>#274291</span>
+            <span class="chip"><span class="chip-dot" style="background:#1C92D1"></span>#1C92D1</span>
+            <span class="chip chip-size">54pt</span><span class="chip chip-size">8pt</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="layout-card">
+        <div class="layout-thumb dark"></div>
+        <div class="layout-info">
+          <div class="layout-id">slideLayout12</div>
+          <div class="layout-name">7_Custom Layout</div>
+          <div class="layout-chips">
+            <span class="chip"><span class="chip-dot" style="background:#274291"></span>#274291</span>
+            <span class="chip"><span class="chip-dot" style="background:#FFFFFF;border:1px solid #ccc"></span>#FFFFFF</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- MOTIFS -->
+  <section id="motifs" class="section">
+    <div class="section-heading">
+      <div class="slash">//</div>
+      <h2>Visual Motifs</h2>
+    </div>
+    <div class="motif-grid">
+
+      <div class="motif-card">
+        <div class="motif-preview mp-diagonal"></div>
+        <div class="motif-info">
+          <div class="motif-name">Diagonal Line</div>
+          <div class="motif-desc">Thin diagonal line running upper-right to lower-center — the signature brand graphic across all slide types. Color #3155A6 at ~30% opacity.</div>
+          <div class="motif-applies">Applies to: all slides</div>
+        </div>
+      </div>
+
+      <div class="motif-card">
+        <div class="motif-preview mp-slash">
+          <span class="s1">/</span><span class="s2">/</span>
+        </div>
+        <div class="motif-info">
+          <div class="motif-name">Slash Accent Icon (//)</div>
+          <div class="motif-desc">Bold double-slash in two-tone blue — sits at the intersection of the diagonal line, functions as a visual punctuation mark and brand signature.</div>
+          <div class="motif-applies">Applies to: cover and section slides</div>
+        </div>
+      </div>
+
+      <div class="motif-card">
+        <div class="motif-preview mp-wave">
+          <svg viewBox="0 0 400 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,60 C80,40 160,80 240,55 C320,30 360,65 400,50 L400,80 L0,80 Z" fill="#3A6DB5" opacity="0.5"/>
+            <path d="M0,70 C60,50 140,75 220,60 C300,45 370,70 400,58 L400,80 L0,80 Z" fill="#3A6DB5" opacity="0.4"/>
+            <path d="M0,75 C100,60 200,80 300,65 C350,57 380,72 400,68 L400,80 L0,80 Z" fill="#3A6DB5" opacity="0.6"/>
+          </svg>
+        </div>
+        <div class="motif-info">
+          <div class="motif-name">Wave Illustration</div>
+          <div class="motif-desc">Organic flowing wave lines in the lower-right quadrant. Light version (#C5DCF0) on white slides; darker (#3A6DB5) on navy backgrounds.</div>
+          <div class="motif-applies">Applies to: cover slides, section dividers</div>
+        </div>
+      </div>
+
+      <div class="motif-card">
+        <div class="motif-preview mp-footer">
+          <div class="mp-footer-bar">
+            <div class="fl">
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <div class="fr"><span>SERVCO</span></div>
+          </div>
+        </div>
+        <div class="motif-info">
+          <div class="motif-name">Footer Bar</div>
+          <div class="motif-desc">Two-part horizontal bar at the bottom of content slides. Left ~75%: #1C92D1 with diagonal hatch pattern. Right ~25%: #274291 with SERVCO wordmark in white.</div>
+          <div class="motif-applies">Applies to: content slides (layouts 5, 6, 7)</div>
+        </div>
+      </div>
+
+      <div class="motif-card">
+        <div class="motif-preview mp-hline"></div>
+        <div class="motif-info">
+          <div class="motif-name">Horizontal Rule</div>
+          <div class="motif-desc">Thin full-width rule separating the content area from the footer zone on cover slides. Light version: #1C92D1. Dark version: #FFFFFF.</div>
+          <div class="motif-applies">Applies to: cover slides</div>
+        </div>
+      </div>
+
+      <div class="motif-card">
+        <div class="motif-preview" style="background:#EEF3FB;display:flex;align-items:center;justify-content:center;">
+          <span style="font-family:'DM Mono',monospace;font-size:11px;color:var(--muted)">PP_WIDE_TEMP_BLUE_A.ai</span>
+        </div>
+        <div class="motif-info">
+          <div class="motif-name">Background Master Image</div>
+          <div class="motif-desc">Full-bleed vector applied via the slide master. Contains the diagonal line and wave motifs at canvas scale. Offset X: 1,587 EMU.</div>
+          <div class="motif-applies">Applies to: all slides via master</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ANATOMY -->
+  <section id="anatomy" class="section">
+    <div class="section-heading">
+      <div class="slash">//</div>
+      <h2>Slide Anatomy</h2>
+    </div>
+    <div class="anatomy-grid">
+
+      <div class="anatomy-card">
+        <div class="anatomy-slide anat-light">
+          <span class="anat-logo navy">SERVCO</span>
+          <div class="anat-diag"></div>
+          <span class="anat-slash color">//</span>
+          <div class="anat-rule"></div>
+        </div>
+        <div class="anatomy-info">
+          <div class="anatomy-name">Cover Slide (Light)</div>
+          <div class="anatomy-props">
+            <div class="anatomy-prop"><span class="anatomy-prop-key">Background</span><span class="anatomy-prop-val">White</span></div>
+            <div class="anatomy-prop"><span class="anatomy-prop-key">Logo</span><span class="anatomy-prop-val">Top-left, navy</span></div>
+            <div class="anatomy-prop"><span class="anatomy-prop-key">Diagonal line</span><span class="badge badge-yes">Yes</span></div>
+            <div class="anatomy-prop"><span class="anatomy-prop-key">Slash icon</span><span class="badge badge-yes">Yes</span></div>
+            <div class="anatomy-prop"><span class="anatomy-prop-key">Wave graphic</span><span class="badge badge-yes">Yes</span></div>
+            <div class="anatomy-prop"><span class="anatomy-prop-key">Footer bar</span><span class="badge badge-no">No</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="anatomy-card">
+        <div class="anatomy-slide anat-dark">
+          <span class="anat-logo white">SERVCO</span>
+          <div class="anat-diag" style="opacity:0.1;background:#fff"></div>
+          <span class="anat-slash white">//</span>
+          <div class="anat-rule white-rule"></div>
+          <div class="anat-bottom-band"></div>
+        </div>
+        <div class="anatomy-info">
+          <div class="anatomy-name">Cover Slide (Dark)</div>
+          <div class="anatomy-props">
+            <div class="anatomy-prop"><span class="anatomy-prop-key">Background</span><span class="anatomy-prop-val">#274291</span></div>
+            <div class="anatomy-prop"><span class="anatomy-prop-key">Logo</span><span class="anatomy-prop-val">Lower-left, white</span></div>
+            <div class="anatomy-prop"><span class="anatomy-prop-key">Diagonal line</span><span class="badge badge-yes">Yes</span></div>
+            <div class="anatomy-prop"><span class="anatomy-prop-key">Slash icon</span><span class="badge badge-yes">Yes</span></div>
+            <div class="anatomy-prop"><span class="anatomy-prop-key">Wave graphic</span><span class="badge badge-yes">Yes</span></div>
+            <div class="anatomy-prop"><span class="anatomy-prop-key">Bottom band</span><span class="anatomy-prop-val">#1C92D1</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="anatomy-card">
+        <div class="anatomy-slide anat-content">
+          <span class="anat-slidenum">4</span>
+          <div class="anat-footer-bar">
+            <div class="fl"></div>
+            <div class="fr"></div>
+          </div>
+          <span class="anat-logo footer-right">SERVCO</span>
+        </div>
+        <div class="anatomy-info">
+          <div class="anatomy-name">Content Slide</div>
+          <div class="anatomy-props">
+            <div class="anatomy-prop"><span class="anatomy-prop-key">Background</span><span class="anatomy-prop-val">White</span></div>
+            <div class="anatomy-prop"><span class="anatomy-prop-key">Logo</span><span class="anatomy-prop-val">Footer-right, white</span></div>
+            <div class="anatomy-prop"><span class="anatomy-prop-key">Footer bar</span><span class="badge badge-yes">Yes</span></div>
+            <div class="anatomy-prop"><span class="anatomy-prop-key">Slide number</span><span class="anatomy-prop-val">Top-right, #274291</span></div>
+            <div class="anatomy-prop"><span class="anatomy-prop-key">Diagonal line</span><span class="badge badge-no">No</span></div>
+            <div class="anatomy-prop"><span class="anatomy-prop-key">Wave graphic</span><span class="badge badge-no">No</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CANVAS -->
+  <section id="canvas" class="section">
+    <div class="section-heading">
+      <div class="slash">//</div>
+      <h2>Canvas Spec</h2>
+    </div>
+    <div class="kv-grid">
+      <div class="kv-item"><div class="kv-label">Width (EMU)</div><div class="kv-value">24,387,175</div></div>
+      <div class="kv-item"><div class="kv-label">Height (EMU)</div><div class="kv-value">13,716,000</div></div>
+      <div class="kv-item"><div class="kv-label">Width (inches)</div><div class="kv-value">26.67"</div></div>
+      <div class="kv-item"><div class="kv-label">Height (inches)</div><div class="kv-value">15.00"</div></div>
+      <div class="kv-item"><div class="kv-label">Aspect Ratio</div><div class="kv-value">16:9</div></div>
+      <div class="kv-item"><div class="kv-label">Orientation</div><div class="kv-value">Landscape</div></div>
+      <div class="kv-item"><div class="kv-label">Slide Number X</div><div class="kv-value">21,862,278</div></div>
+      <div class="kv-item"><div class="kv-label">Slide Number Y</div><div class="kv-value">619,847</div></div>
+      <div class="kv-item"><div class="kv-label">Bg Image Offset X</div><div class="kv-value">1,587 EMU</div></div>
+      <div class="kv-item"><div class="kv-label">Bg Image Offset Y</div><div class="kv-value">0 EMU</div></div>
+      <div class="kv-item"><div class="kv-label">Body Space Before</div><div class="kv-value">20%</div></div>
+      <div class="kv-item"><div class="kv-label">Kerning</div><div class="kv-value">12pt</div></div>
+    </div>
+  </section>
+
+  <!-- GOVERNANCE -->
+  <section id="governance" class="section">
+    <div class="section-heading">
+      <div class="slash">//</div>
+      <h2>Governance</h2>
+    </div>
+    <div class="gov-grid">
+
+      <div class="gov-card required">
+        <div class="gov-title">Required Elements</div>
+        <ul class="gov-list">
+          <li>SERVCO wordmark must appear on every slide</li>
+          <li>Diagonal blue line motif is a core brand signature — do not remove</li>
+          <li>Wave illustration only on cover/section slides, not content slides</li>
+          <li>Footer bar (two-tone) required on all content/body slides</li>
+          <li>Slide numbers top-right in navy (#274291) on content slides</li>
+        </ul>
+      </div>
+
+      <div class="gov-card color">
+        <div class="gov-title">Color Rules</div>
+        <ul class="gov-list">
+          <li>Primary navy (#274291) is dominant — use for logo, headings, key UI elements</li>
+          <li>Light blue (#1C92D1) is the accent — use sparingly for highlights, bars, icons</li>
+          <li>Do not use accent colors (red, green, purple, orange) from the theme palette in brand presentations</li>
+          <li>White text only on navy or blue backgrounds</li>
+        </ul>
+      </div>
+
+      <div class="gov-card typo">
+        <div class="gov-title">Typography Rules</div>
+        <ul class="gov-list">
+          <li>Montserrat ExtraBold for all headings and the wordmark</li>
+          <li>Montserrat Medium for body copy</li>
+          <li>Do not mix other fonts — Arial is bullet-point fallback only</li>
+          <li>Titles left-aligned on content slides; centered on cover slides</li>
+        </ul>
+      </div>
+
+      <div class="gov-card donot">
+        <div class="gov-title">Do Not</div>
+        <ul class="gov-list">
+          <li>Do not add decorative elements that compete with the diagonal line motif</li>
+          <li>Do not use the accent colors (red, green, orange) in corporate presentations</li>
+          <li>Do not place the logo in the body content area</li>
+          <li>Do not use the wave graphic on content/data slides</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<script>
+  function show(id, btn) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    btn.classList.add('active');
+  }
+</script>
+</body>
+</html>
