@@ -23,7 +23,7 @@
 
 ## A. Project & Data Summary
 
-**Organization:** Servco Pacific Inc. — diversified automotive and services company operating across Hawaii and the Pacific region, representing brands including Toyota, Subaru, Lexus, and Volkswagen.
+**Organization:** Servco Pacific Inc. — diversified automotive and services company operating across Hawaii and the Pacific region, representing brands including Toyota, Subaru, Lexus, and Chevrolet.
 
 **Project Scope:** This analysis covers Servco's corporate brand presentation system, built from the approved theme file `Servco_Theme.pptx` during May 2026. The objective was to audit the existing brand template, extract all design parameters, and produce a scalable, reproducible brand system for use across executive, partner, and internal-facing communications.
 
